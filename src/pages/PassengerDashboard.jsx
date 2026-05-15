@@ -1,6 +1,10 @@
 import { Link } from "react-router-dom"
+import { useAuth } from "../contexts/AuthContext"
 
 export default function PassengerDashboard() {
+    const { user } = useAuth()
+    console.log(user)
+
     return (
       <div className="min-h-screen bg-gray-100 flex flex-col">
   
@@ -20,7 +24,7 @@ export default function PassengerDashboard() {
   
           <div>
             <h2 className="text-3xl font-bold">
-              Welcome Passenger
+              Welcome, {user?.email} 
             </h2>
   
             <p className="text-gray-600">
