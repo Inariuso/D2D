@@ -1,3 +1,5 @@
+import { Link } from "react-router-dom"
+
 export default function PassengerDashboard() {
     return (
       <div className="min-h-screen bg-gray-100 flex flex-col">
@@ -49,19 +51,19 @@ export default function PassengerDashboard() {
   
         {/* Bottom Navigation */}
         <nav className="bg-white border-t border-gray-300 p-4 flex justify-around">
-  
-          <button className="font-semibold">
-            Home
-          </button>
-  
-          <button>
-            Trips
-          </button>
-  
-          <button>
-            Profile
-          </button>
-  
+
+            <Link to="/" className="font-semibold">
+             Dashboard
+            </Link>
+
+            <Link to="/trips">
+             Trips
+            </Link>
+
+            <Link to="/profile">
+             Profile
+            </Link>
+
         </nav>
   
       </div>
