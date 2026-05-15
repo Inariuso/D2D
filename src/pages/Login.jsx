@@ -1,5 +1,6 @@
 import { useState } from "react"
 import { useNavigate } from "react-router-dom"
+import { createPassengerProfile } from "../services/database"
 
 import {
   loginUser,
@@ -14,20 +15,23 @@ export default function Login() {
   const [password, setPassword] = useState("")
   const [message, setMessage] = useState("")
 
+
   const handleRegister = async () => {
 
     try {
-
-      await registerUser(email, password)
-
+  
+      const result = await registerUser(email, password)
+  
+      await createPassengerProfile(result.user)
+  
       setMessage("Registration successful")
-
+  
       navigate("/")
-
+  
     } catch (error) {
-
+  
       setMessage(error.message)
-
+  
     }
   }
 
