@@ -7,26 +7,47 @@ import {
 import PassengerDashboard from "./pages/PassengerDashboard"
 import Trips from "./pages/Trips"
 import Profile from "./pages/Profile"
+import Login from "./pages/Login"
+
+import ProtectedRoute from "./components/ProtectedRoute"
 
 export default function App() {
+
   return (
     <BrowserRouter>
 
       <Routes>
 
         <Route
+          path="/login"
+          element={<Login />}
+        />
+
+        <Route
           path="/"
-          element={<PassengerDashboard />}
+          element={
+            <ProtectedRoute>
+              <PassengerDashboard />
+            </ProtectedRoute>
+          }
         />
 
         <Route
           path="/trips"
-          element={<Trips />}
+          element={
+            <ProtectedRoute>
+              <Trips />
+            </ProtectedRoute>
+          }
         />
 
         <Route
           path="/profile"
-          element={<Profile />}
+          element={
+            <ProtectedRoute>
+              <Profile />
+            </ProtectedRoute>
+          }
         />
 
       </Routes>
