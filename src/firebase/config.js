@@ -6,7 +6,8 @@ const firebaseConfig = {
     projectId: "ride-app-bf612",
     storageBucket: "ride-app-bf612.firebasestorage.app",
     messagingSenderId: "640742450642",
-    appId: "1:640742450642:web:7459b7ecda9607ea22940b"
+    appId: "1:640742450642:web:7459b7ecda9607ea22940b",
+    measurementId: "G-B815KDHJXV"
 }
 
 const app = initializeApp(firebaseConfig)
